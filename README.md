@@ -1,3 +1,5 @@
+![lint](https://github.com/shotanue/shotanue.dev/actions/workflows/lint.yml/badge.svg)
+
 # shotanue.dev
 
 ## requirements
