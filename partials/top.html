@@ -1,0 +1,48 @@
+<p>
+  <h2>Hello, there🤘🏼</h2>
+  <span>I'm a web developer, working in Japan.</span>
+  </p>
+
+  <p>
+  <h2>Capabilities</h2>
+  <span>Web development, TypeScript, React, Next.js, PHP, MySQL</span>
+  </p>
+
+  <p>
+  <h2>You can find me on</h2>
+  <ul role="list">
+    <li>
+      <a href="https://x.com/shotanue" target="_brank" rel="noopener noreferrer">
+        X
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/shotanue" target="_brank" rel="noopener noreferrer">
+        GitHub
+      </a>
+    </li>
+    <li>
+      <a href="https://qiita.com/shotanue" target="_brank" rel="noopener noreferrer">
+        Qiita
+      </a>
+    </li>
+    <li>
+      <a href="https://shotanue.hatenablog.com" target="_brank" rel="noopener">
+        Hatena
+      </a>
+    </li>
+  </ul>
+  </p>
+
+  <p>
+  <h2><a href="/posts">Posts</a></h2>
+
+  <ul role="list">
+    {{#posts}}
+    <li>
+      <a href="{{link}}" target="{{A_TARGET}}" rel="noopener" data-publishedAt="{{publishedAt}}">{{title}}</a>
+    </li>
+    {{/posts}}
+    <li><a href="/posts">cd</a></li>
+  </ul>
+</p>
