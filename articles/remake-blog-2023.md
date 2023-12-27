@@ -10,7 +10,9 @@ updatedAt: 2023-12-25T03:00:00+09:00
 
 ## ブログをまた作り直した
 
-[前回のブログ作り](https://shotanue.hatenablog.com/entry/2022/12/10/042735)
+[ソースコード](https://github.com/shotanue/shotanue.dev)
+
+[前回のブログ作りはこちら](https://shotanue.hatenablog.com/entry/2022/12/10/042735)
 
 今回はNext.jsなど使わず、オレオレSSGを[bun.sh](https://bun.sh)と[mustache.js](https://github.com/janl/mustache.js)で構築した。
 
