@@ -9,7 +9,7 @@
 ## setup
 
 ```bash
-bun install
+mise install
 ```
 
 ## How to develop
