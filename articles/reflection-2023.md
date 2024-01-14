@@ -1,5 +1,5 @@
 ---
-id: reflection-2023.md
+id: reflection-2023
 tags:
   - blog
 title: 2023年振り返り
