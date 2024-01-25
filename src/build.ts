@@ -12,11 +12,14 @@ mustache.templateCache = undefined;
 
 const aggregateFiles = async (scanDir: string) => {
   const dict: Record<string, string> = {};
-  const list: string[] = [];
+  const list: {
+    id: string;
+    content: string;
+  }[] = [];
 
   for await (const file of new Bun.Glob("*").scan(scanDir)) {
     dict[file] = await Bun.file(`${scanDir}/${file}`).text();
-    list.push(dict[file]);
+    list.push({ id: file.replace(/\.[^/.]+$/, ""), content: dict[file] });
   }
 
   return { dict, list };
@@ -56,30 +59,33 @@ const ssg = async ({ mustache, assets, routes }: Conf) => {
 const build = async () => {
   const feeds = await Bun.file("./resources/feeds.json").json();
   const articles = (await aggregateFiles("./resources/articles")).list
-    .map((x) => {
-      return JSON.parse(x) as {
+    .map((x) => ({
+      id: x.id,
+      content: JSON.parse(x.content) as {
         html: string;
         frontmatter: { id: string; title: string; tags: string[]; publishedAt: string; updatedAt: string };
-      };
-    })
+      },
+    }))
     .map((x): Post => {
       z.object({
-        id: z.string(),
-        title: z.string(),
         tags: z.array(z.string()),
         publishedAt: z.string(),
-        updatedAt: z.string(),
-      }).parse(x.frontmatter);
+      }).parse(x.content.frontmatter);
+
+      const extractTitleUsingRegex = (htmlString: string) => {
+        const match = htmlString.match(/<h[1-6]>(.*?)<\/h[1-6]>/);
+        return match ? match[1] : "";
+      };
 
       return {
         kind: "shotanue.dev",
-        id: x.frontmatter.id,
-        title: x.frontmatter.title,
-        tags: x.frontmatter.tags,
-        link: `/posts/${x.frontmatter.id}`,
-        publishedAt: x.frontmatter.publishedAt,
-        updatedAt: x.frontmatter.updatedAt,
-        html: x.html,
+        id: x.id,
+        title: extractTitleUsingRegex(x.content.html.split("\n").at(0) ?? ""),
+        tags: x.content.frontmatter.tags,
+        link: `/posts/${x.id}`,
+        publishedAt: x.content.frontmatter.publishedAt,
+        updatedAt: x.content.frontmatter.updatedAt,
+        html: x.content.html,
       };
     });
 
@@ -114,6 +120,7 @@ const build = async () => {
           children: "nav.html",
           params: {
             title: "Nav",
+            location: "/nav",
             metaTitle: "shotanue.dev|nav",
             returnTo: "/",
           },
@@ -126,6 +133,7 @@ const build = async () => {
           params: {
             title: "Posts",
             metaTitle: "shotanue.dev|Posts",
+            location: "/posts",
             returnTo: "/",
             posts,
             A_TARGET: function (this: { link: string }) {
@@ -141,6 +149,7 @@ const build = async () => {
             children: "post.html",
             params: {
               metaTitle: `shotanue.dev|${article.title}`,
+              location: `/posts/${article.id}`,
               returnTo: "/posts/",
               title: article.title,
               article,

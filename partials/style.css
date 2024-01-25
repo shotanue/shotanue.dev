@@ -101,8 +101,7 @@ body {
 
     &>.content {
       grid-area: main;
-      padding-left: var(--space-sm);
-      padding-right: var(--space-sm);
+      padding: var(--space-md);
       overflow-x: hidden;
 
       &>.copyright {
@@ -153,9 +152,6 @@ img.ellipse {
   height: 33vh;
 }
 
-ul {
-  padding: 0;
-}
 
 li {
   padding-top: 10px;
