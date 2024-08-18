@@ -4,10 +4,7 @@
   "description": "UI components",
   "private": true,
   "license": "MIT",
-  "files": [
-    "dist",
-    "package.json"
-  ],
+  "files": ["dist", "package.json"],
   "exports": {
     ".": {
       "import": "./dist/index.mjs",

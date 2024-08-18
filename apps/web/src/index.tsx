@@ -1,6 +1,6 @@
-import { Hono } from "hono";
 import { reactRenderer } from "@hono/react-renderer";
 import { Heading1 } from "@repo/ui";
+import { Hono } from "hono";
 
 const app = new Hono();
 

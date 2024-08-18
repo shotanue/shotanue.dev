@@ -1,10 +1,7 @@
 import { getPosts } from "./_generated/esa";
-import { Entry } from "./types";
+import type { Entry } from "./types";
 
-export const esa = async (
-  teamName: string,
-  category: string,
-): Promise<Entry[]> => {
+export const esa = async (teamName: string, category: string): Promise<Entry[]> => {
   const { data: posts } = await getPosts(teamName, {
     q: `in:${category}`,
     per_page: 100,

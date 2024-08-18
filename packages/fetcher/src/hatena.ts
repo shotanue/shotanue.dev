@@ -1,7 +1,7 @@
 import axios from "axios";
 import xml2js from "xml2js";
 import { z } from "zod";
-import { Entry } from "./types";
+import type { Entry } from "./types";
 
 const schema = z.array(
   z
@@ -25,12 +25,8 @@ const schema = z.array(
     }),
 );
 
-export const hatena = async (
-  userName: `${string}.hatenablog.com`,
-): Promise<Entry[]> => {
-  const response = await axios.get<Entry[]>(
-    `https://${userName}.hatenablog.com/feed?exclude_body=1&size=100`,
-  );
+export const hatena = async (userName: `${string}.hatenablog.com`): Promise<Entry[]> => {
+  const response = await axios.get<Entry[]>(`https://${userName}.hatenablog.com/feed?exclude_body=1&size=100`);
 
   const parser = new xml2js.Parser({
     explicitArray: false,

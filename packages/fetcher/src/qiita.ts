@@ -1,6 +1,6 @@
 import axios from "axios";
 import { z } from "zod";
-import { Entry } from "./types";
+import type { Entry } from "./types";
 
 const schema = z.array(
   z
@@ -23,9 +23,7 @@ const schema = z.array(
 );
 
 export const qiita = async (userName: string): Promise<Entry[]> => {
-  const response = await axios.get(
-    `https://qiita.com/api/v2/users/${userName}/items?page=1&per_page=100`,
-  );
+  const response = await axios.get(`https://qiita.com/api/v2/users/${userName}/items?page=1&per_page=100`);
 
   return schema.parse(response.data);
 };

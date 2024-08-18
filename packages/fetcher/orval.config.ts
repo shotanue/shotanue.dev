@@ -7,9 +7,7 @@ export default defineConfig(async () => {
   const esaSchemaPath = resolve(__dirname, "esa.schema.json");
 
   await (async () => {
-    const res = await fetch(
-      "https://raw.githubusercontent.com/suin/esa-openapi/main/esa-api.json",
-    );
+    const res = await fetch("https://raw.githubusercontent.com/suin/esa-openapi/main/esa-api.json");
 
     if (!res.ok) {
       throw new Error(`status:${res.status}, msg:${res.statusText}`);
