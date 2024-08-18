@@ -8,7 +8,7 @@ app.get(
   "*",
   reactRenderer(({ children }) => {
     return (
-      <html>
+      <html lang="ja">
         <head>
           <title>React + Hono</title>
         </head>

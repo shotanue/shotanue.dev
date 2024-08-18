@@ -2,7 +2,6 @@ import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig } from "orval";
 
-// biome-ignore lint/style/noDefaultExport:
 export default defineConfig(async () => {
   const esaSchemaPath = resolve(__dirname, "esa.schema.json");
 

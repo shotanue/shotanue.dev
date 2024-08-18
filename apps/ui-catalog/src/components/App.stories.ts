@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { App } from "ui";
+import { App } from "@repo/ui";
 
 const meta: Meta<typeof App> = {
   component: App,
