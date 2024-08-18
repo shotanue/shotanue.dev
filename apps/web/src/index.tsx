@@ -1,22 +1,19 @@
 import { reactRenderer } from "@hono/react-renderer";
-import { Heading1 } from "@repo/ui";
+import { App } from "@repo/ui";
 import { Hono } from "hono";
 
 const app = new Hono();
-
 app.get(
   "*",
   reactRenderer(({ children }) => {
     return (
       <html lang="ja">
         <head>
-          <title>React + Hono</title>
+          <title>shotanue.dev</title>
+          <link href="/global.css" rel="stylesheet" />
         </head>
-
         <body>
-          <h1>React + Hono</h1>
-          <Heading1>Heading 1</Heading1>
-          <div>{children}</div>
+          <App txt="" />
         </body>
       </html>
     );

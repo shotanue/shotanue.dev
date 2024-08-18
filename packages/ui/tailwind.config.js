@@ -1,3 +1,8 @@
+const {
+  iconsPlugin,
+  getIconCollections,
+} = require("@egoist/tailwindcss-icons");
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{ts,tsx}"],
@@ -20,7 +25,11 @@ export default {
       ],
     },
   },
-  plugins: [],
+  plugins: [
+    iconsPlugin({
+      collections: getIconCollections(["heroicons"]),
+    }),
+  ],
   corePlugins: {
     preflight: true,
   },
