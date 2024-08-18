@@ -1,34 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "ui",
+  "name": "@repo/ui",
   "description": "UI components",
   "private": true,
   "license": "MIT",
-  "type": "module",
+  "files": [
+    "dist",
+    "package.json"
+  ],
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "import": "./dist/index.js"
-      }
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
     },
     "./style.css": "./dist/style.css"
   },
   "scripts": {
-    "build": "vite build",
-    "dev": "vite build --watch",
-    "check": "biome check .",
-    "check:fix": "biome check --fix --unsafe ."
+    "build": "tsup",
+    "dev": "tsup --watch"
   },
   "dependencies": {
     "classnames": "2.5.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "4.3.0",
     "autoprefixer": "10.4.19",
+    "postcss": "8.4.41",
     "tailwindcss": "3.4.3",
-    "vite": "5.2.12",
-    "vite-plugin-dts": "3.9.1"
+    "tsup": "8.2.4"
   },
   "peerDependencies": {
     "react": "^18.3.1",

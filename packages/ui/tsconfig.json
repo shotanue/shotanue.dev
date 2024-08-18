@@ -1,6 +1,8 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "types": []
+    "lib": ["ESNext"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
