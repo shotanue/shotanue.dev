@@ -10,18 +10,19 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.mts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./index.css": "./dist/index.css"
   },
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch"
+    "postbuild": "tailwind -i src/input.css -o dist/index.css --minify",
+    "build": "tsup"
   },
   "dependencies": {
     "classnames": "2.5.1"
   },
+  "type": "module",
   "devDependencies": {
     "@egoist/tailwindcss-icons": "1.8.1",
     "@iconify-json/heroicons": "1.1.24",

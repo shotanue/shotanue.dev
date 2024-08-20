@@ -1,5 +1,3 @@
-import "./input.css";
-
 export { App } from "./components/App";
 
 export * from "./components/Typographies";

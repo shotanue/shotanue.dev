@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Logo } from "ui";
+import { Logo } from "@repo/ui";
 
 const meta: Meta<typeof Logo> = {
   component: Logo,

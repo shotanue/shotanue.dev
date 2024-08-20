@@ -4,7 +4,7 @@ export default defineConfig({
   entry: ["./src/index.tsx"],
   target: "esnext",
   format: ["esm"],
-  clean: true,
+  clean: false,
   dts: true,
   treeshake: true,
 });
