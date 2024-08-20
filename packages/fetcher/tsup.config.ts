@@ -2,7 +2,7 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
   format: ["esm"],
-  clean: true,
+  clean: false,
   dts: true,
   treeshake: true,
 });

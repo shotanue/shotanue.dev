@@ -4,6 +4,7 @@ export const App = ({ txt }: { txt: string }) => {
       <header className="">
         <div className="">
           <p className="text-purple-200">shotanue.dev</p>
+          {txt}!!!
         </div>
       </header>
     </div>
