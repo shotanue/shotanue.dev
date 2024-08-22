@@ -20,7 +20,8 @@
     "build": "tsup"
   },
   "dependencies": {
-    "classnames": "2.5.1"
+    "classnames": "2.5.1",
+    "react-markdown": "9.0.1"
   },
   "devDependencies": {
     "@egoist/tailwindcss-icons": "1.8.1",
