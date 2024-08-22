@@ -4,6 +4,7 @@
   "description": "UI components",
   "private": true,
   "license": "MIT",
+  "type": "module",
   "files": [
     "dist",
     "package.json"
@@ -16,13 +17,11 @@
     "./index.css": "./dist/index.css"
   },
   "scripts": {
-    "postbuild": "tailwind -i src/input.css -o dist/index.css --minify",
     "build": "tsup"
   },
   "dependencies": {
     "classnames": "2.5.1"
   },
-  "type": "module",
   "devDependencies": {
     "@egoist/tailwindcss-icons": "1.8.1",
     "@iconify-json/heroicons": "1.1.24",

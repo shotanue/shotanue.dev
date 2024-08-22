@@ -3,8 +3,9 @@ export const App = ({ txt }: { txt: string }) => {
     <div className="grid grid-cols-1 p-4a">
       <header className="">
         <div className="">
-          <p className="text-purple-200">shotanue.dev</p>
-          {txt}!!!
+          <span className="i-heroicons-folder" />
+          <p className="text-purple-500">shotanue.dev</p>
+          {txt}
         </div>
       </header>
     </div>
