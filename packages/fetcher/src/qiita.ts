@@ -13,12 +13,13 @@ const schema = z.array(
     })
     .transform((x) => {
       return {
+        kind: "qiita",
         id: x.id,
         title: x.title,
         href: x.url,
         publishedAt: x.created_at,
         updatedAt: x.updated_at,
-      };
+      } as const;
     }),
 );
 

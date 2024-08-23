@@ -1,5 +1,12 @@
 import { App } from "@repo/ui";
+import { allPosts } from "@repo/resources";
 
-export default function () {
-  return <App txt="" />;
+export default async function () {
+  const posts = await allPosts();
+
+  const post = posts
+    .filter((x) => x.kind === "esa")
+    .find((x) => x.title !== "README");
+
+  return <App txt={post?.content ?? ""} />;
 }

@@ -18,12 +18,13 @@ const schema = z.array(
     })
     .transform((x) => {
       return {
+        kind: "hatena",
         id: x.id,
         title: x.title,
         href: x.link[0].href,
         publishedAt: x.published,
         updatedAt: x.updated,
-      };
+      } as const;
     }),
 );
 
