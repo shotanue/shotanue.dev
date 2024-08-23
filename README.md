@@ -2,9 +2,20 @@
 
 # [shotanue.dev](https://shotanue.dev)
 
-## requirements
+## Tech Stack
 
-- [bun.sh](https://bun.sh)
+- monorepo
+  - turborepo
+- linter/formatter
+  - biome
+- web application
+  - Next.js
+  - TypeScript
+  - tailwindcss
+- packages
+  - api client
+    - axios
+    - orval
 
 ## setup
 
