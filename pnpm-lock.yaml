@@ -87,9 +87,9 @@ importers:
 
   apps/web:
     dependencies:
-      '@repo/fetcher':
+      '@repo/resources':
         specifier: workspace:*
-        version: link:../../packages/fetcher
+        version: link:../../packages/resources
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -118,6 +118,9 @@ importers:
 
   packages/fetcher:
     dependencies:
+      feed:
+        specifier: 4.2.2
+        version: 4.2.2
       xml2js:
         specifier: 0.6.2
         version: 0.6.2
@@ -132,14 +135,33 @@ importers:
         specifier: 0.4.14
         version: 0.4.14
       axios:
-        specifier: ^1.7.4
+        specifier: 1.7.4
         version: 1.7.4
-      feed:
-        specifier: 4.2.2
-        version: 4.2.2
       orval:
         specifier: 7.0.1
         version: 7.0.1(openapi-types@12.1.3)(typescript@5.5.4)
+      tsup:
+        specifier: 8.2.4
+        version: 8.2.4(@microsoft/api-extractor@7.47.4(@types/node@22.4.1))(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4)(yaml@2.5.0)
+
+  packages/resources:
+    dependencies:
+      '@repo/fetcher':
+        specifier: workspace:*
+        version: link:../fetcher
+      axios:
+        specifier: 1.7.4
+        version: 1.7.4
+      bun:
+        specifier: 1.1.25
+        version: 1.1.25
+      zod:
+        specifier: 3.23.8
+        version: 3.23.8
+    devDependencies:
+      bun-types:
+        specifier: 1.1.25
+        version: 1.1.25
       tsup:
         specifier: 8.2.4
         version: 8.2.4(@microsoft/api-extractor@7.47.4(@types/node@22.4.1))(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4)(yaml@2.5.0)
@@ -1656,6 +1678,46 @@ packages:
   '@orval/zod@7.0.1':
     resolution: {integrity: sha512-jxrWCLKPffEWR0OY/lDnzrq4rGGdzSvu/apdL4Qr0j/qeYddrUurt/bdDtcS+l8ZPcTz7ppnp4KMhv1gG4549A==}
 
+  '@oven/bun-darwin-aarch64@1.1.25':
+    resolution: {integrity: sha512-E7/y3K+8IcH+/i0OBPtVUmA6WfPaixR3SCm04QPCkSiekrNVftVOzkQaShmz40QsdvsFjK/5oVwCg39wCuo+7A==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@oven/bun-darwin-x64-baseline@1.1.25':
+    resolution: {integrity: sha512-JbUSBI+CJjsAvkIeE7O9z7FEH1qjcsssn7iI4KmYoZEJK66/gnkVRhqfLNSUKEPdaEK3PyDB7UE4EAJlrcNj9g==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@oven/bun-darwin-x64@1.1.25':
+    resolution: {integrity: sha512-xL4P+TJk7acIz4x6CKIF6BH97mjdRvwh3a3S5EsaxsNXnFFvBNPFpwEGhITCtHPSURj4x34mZq4v63znZcseNQ==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@oven/bun-linux-aarch64@1.1.25':
+    resolution: {integrity: sha512-vZzqRb+LRiQd5SRvRde0ZsFFh1vZIy2tH3KNOxuQp/QmXLNNibmA+vNdCszeRlm3a2QKaioVLhHmuh6kpL5zhw==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@oven/bun-linux-x64-baseline@1.1.25':
+    resolution: {integrity: sha512-9Kv1Yte/UxBdFODLXttxHBvy/k/DlzyOt4GZkYsL0h9G0ZrOucTfTpotKR2ElDszzUtQbNYOw9UYJ7OUnDkdZA==}
+    cpu: [x64]
+    os: [linux]
+
+  '@oven/bun-linux-x64@1.1.25':
+    resolution: {integrity: sha512-err75vLLEXW00BvZU37mYzxzzkP0+XWZlRYS0bqVrLQeQFAuXPohuOUFKLD0UXSTtqiwSnedZQkBHFWxp3O7Sg==}
+    cpu: [x64]
+    os: [linux]
+
+  '@oven/bun-windows-x64-baseline@1.1.25':
+    resolution: {integrity: sha512-hNYQFYSRx/JdMZDfqFLCQSm/nS9/JPpz7aBGuL6C1HpT0cvuPuxxpK7KnaWfrj+ws0BX2Id/s4hrdUNfbovR5Q==}
+    cpu: [x64]
+    os: [win32]
+
+  '@oven/bun-windows-x64@1.1.25':
+    resolution: {integrity: sha512-Gfrnwn8s+juDiLa0pdq2RnKsAZY4oSxNrQmopZu044V0EmpLKJJWE9llHki/33ezVFXamiyJ0MJIfFeLflC0Kg==}
+    cpu: [x64]
+    os: [win32]
+
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
@@ -2356,6 +2418,9 @@ packages:
   '@types/node@18.19.44':
     resolution: {integrity: sha512-ZsbGerYg72WMXUIE9fYxtvfzLEuq6q8mKERdWFnqTmOvudMxnz+CBNRoOwJ2kNpFOncrKjT1hZwxjlFgQ9qvQA==}
 
+  '@types/node@20.12.14':
+    resolution: {integrity: sha512-scnD59RpYD91xngrQQLGkE+6UrHUPzeKZWhhjBSa3HSkwjbQc38+q3RoIVEwxQGRw3M+j5hpNAM+lgV3cVormg==}
+
   '@types/node@22.4.1':
     resolution: {integrity: sha512-1tbpb9325+gPnKK0dMm+/LMriX0vKxf6RnB0SZUqfyVkQ4fMgUSySqhxE/y8Jvs4NyF1yHzTfG9KlnkIODxPKg==}
 
@@ -2412,6 +2477,9 @@ packages:
 
   '@types/uuid@9.0.8':
     resolution: {integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==}
+
+  '@types/ws@8.5.12':
+    resolution: {integrity: sha512-3tPRkv1EtkDpzlgyKyI8pGsGZAGPEaXeu0DOj5DI25Ja91bdAYddYHbADRYVrZMRbfW+1l5YwXVDKohDJNQxkQ==}
 
   '@types/xml2js@0.4.14':
     resolution: {integrity: sha512-4YnrRemBShWRO2QjvUin8ESA41rH+9nQGLUGZV/1IDhi3SL9OhdpNC/MrulTWuptXKwhx/aDxE7toV0f/ypIXQ==}
@@ -2768,6 +2836,14 @@ packages:
 
   buffer@5.7.1:
     resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
+
+  bun-types@1.1.25:
+    resolution: {integrity: sha512-WpRb8/N3S5IE8UYdIn39+0Is1XzxsC78+MCe5cIdaer0lfFs6+DREtQH9TM6KJNKTxBYDvbx81RwbvxS5+CkVQ==}
+
+  bun@1.1.25:
+    resolution: {integrity: sha512-N+KvGq6jcA88QgFVoOMSr2s4sZ9u+R7Tn6Hci25mdygZxa3jgaS91PMNxpEJKkyTBLOhH5E8erx+tqtRLyFbJA==}
+    os: [darwin, linux, win32]
+    hasBin: true
 
   bundle-require@5.0.0:
     resolution: {integrity: sha512-GuziW3fSSmopcx4KRymQEJVbZUfqlCqcq7dvs6TYwKRZiegK/2buMxQTPs6MGlNv50wms1699qYO54R8XfRX4w==}
@@ -7344,6 +7420,30 @@ snapshots:
       - openapi-types
       - supports-color
 
+  '@oven/bun-darwin-aarch64@1.1.25':
+    optional: true
+
+  '@oven/bun-darwin-x64-baseline@1.1.25':
+    optional: true
+
+  '@oven/bun-darwin-x64@1.1.25':
+    optional: true
+
+  '@oven/bun-linux-aarch64@1.1.25':
+    optional: true
+
+  '@oven/bun-linux-x64-baseline@1.1.25':
+    optional: true
+
+  '@oven/bun-linux-x64@1.1.25':
+    optional: true
+
+  '@oven/bun-windows-x64-baseline@1.1.25':
+    optional: true
+
+  '@oven/bun-windows-x64@1.1.25':
+    optional: true
+
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
@@ -8758,6 +8858,10 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
+  '@types/node@20.12.14':
+    dependencies:
+      undici-types: 5.26.5
+
   '@types/node@22.4.1':
     dependencies:
       undici-types: 6.19.6
@@ -8815,6 +8919,10 @@ snapshots:
   '@types/urijs@1.19.25': {}
 
   '@types/uuid@9.0.8': {}
+
+  '@types/ws@8.5.12':
+    dependencies:
+      '@types/node': 22.4.1
 
   '@types/xml2js@0.4.14':
     dependencies:
@@ -9249,6 +9357,22 @@ snapshots:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
+
+  bun-types@1.1.25:
+    dependencies:
+      '@types/node': 20.12.14
+      '@types/ws': 8.5.12
+
+  bun@1.1.25:
+    optionalDependencies:
+      '@oven/bun-darwin-aarch64': 1.1.25
+      '@oven/bun-darwin-x64': 1.1.25
+      '@oven/bun-darwin-x64-baseline': 1.1.25
+      '@oven/bun-linux-aarch64': 1.1.25
+      '@oven/bun-linux-x64': 1.1.25
+      '@oven/bun-linux-x64-baseline': 1.1.25
+      '@oven/bun-windows-x64': 1.1.25
+      '@oven/bun-windows-x64-baseline': 1.1.25
 
   bundle-require@5.0.0(esbuild@0.23.0):
     dependencies:

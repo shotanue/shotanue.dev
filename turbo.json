@@ -1,5 +1,12 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "ESA_TOKEN",
+    "ESA_TEAM_NAME",
+    "ESA_CATEGORY",
+    "HATENA_USERNAME",
+    "QIITA_USERNAME"
+  ],
   "ui": "stream",
   "tasks": {
     "build": {
@@ -8,7 +15,6 @@
     },
     "dev": {
       "dependsOn": ["^build"],
-      "cache": false,
       "persistent": true
     }
   }

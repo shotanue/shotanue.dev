@@ -8,9 +8,11 @@ const schema = z.array(
     .object({
       id: z.string(),
       title: z.string(),
-      link: z.object({
-        href: z.string(),
-      }),
+      link: z.array(
+        z.object({
+          href: z.string(),
+        }),
+      ),
       published: z.string(),
       updated: z.string(),
     })
@@ -18,15 +20,21 @@ const schema = z.array(
       return {
         id: x.id,
         title: x.title,
-        href: x.link.href,
+        href: x.link[0].href,
         publishedAt: x.published,
         updatedAt: x.updated,
       };
     }),
 );
 
-export const hatena = async (userName: `${string}.hatenablog.com`): Promise<Entry[]> => {
-  const response = await axios.get<Entry[]>(`https://${userName}.hatenablog.com/feed?exclude_body=1&size=100`);
+export const hatena = async ({
+  userName,
+}: {
+  userName: string;
+}): Promise<Entry[]> => {
+  const response = await axios.get<Entry[]>(
+    `https://${userName}.hatenablog.com/feed?exclude_body=1&size=100`,
+  );
 
   const parser = new xml2js.Parser({
     explicitArray: false,
@@ -35,5 +43,5 @@ export const hatena = async (userName: `${string}.hatenablog.com`): Promise<Entr
 
   const result = await parser.parseStringPromise(response.data);
 
-  return schema.parse(result);
+  return schema.parse(result.feed.entry);
 };

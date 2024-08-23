@@ -8,14 +8,22 @@
 
 ## setup
 
-```bash
-mise install
+```sh
+pnpm i
 ```
 
 ## How to develop
 
-```bash
-bun run dev
+write `.env` file.
+
+```txt
+ESA_TOKEN=xxxxxxxx
+ESA_TEAM_NAME=xxxxxxxx
+ESA_CATEGORY=xxxxxxxx
+HATENA_USERNAME=xxxxxxxx
+QIITA_USERNAME=xxxxxxxx
 ```
 
-
+```bash
+pnpm dev
+```

@@ -22,8 +22,14 @@ const schema = z.array(
     }),
 );
 
-export const qiita = async (userName: string): Promise<Entry[]> => {
-  const response = await axios.get(`https://qiita.com/api/v2/users/${userName}/items?page=1&per_page=100`);
+export const qiita = async ({
+  userName,
+}: {
+  userName: string;
+}): Promise<Entry[]> => {
+  const response = await axios.get(
+    `https://qiita.com/api/v2/users/${userName}/items?page=1&per_page=100`,
+  );
 
   return schema.parse(response.data);
 };

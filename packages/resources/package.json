@@ -1,0 +1,34 @@
+{
+  "name": "@repo/resources",
+  "author": "@shotanue",
+  "license": "",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "prebuild": "bun scripts/build.ts",
+    "build": "tsup",
+    "predev": "bun scripts/dev.ts",
+    "dev": "tsup"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@repo/fetcher": "workspace:*",
+    "axios": "1.7.4",
+    "bun": "1.1.25",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "bun-types": "1.1.25",
+    "tsup": "8.2.4"
+  }
+}
