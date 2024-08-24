@@ -31,13 +31,13 @@ export const esa = async ({
 
   return posts.posts.map((post) => {
     return {
-      kind: "esa",
-      id: post.number.toString(),
+      kind: "withContent",
+      category: "shotanue.dev",
       title: post.name,
+      content: post.body_md,
       href: post.url,
       publishedAt: post.created_at,
       updatedAt: post.updated_at,
-      content: post.body_md,
     } as const;
   });
 };

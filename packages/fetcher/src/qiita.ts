@@ -13,7 +13,8 @@ const schema = z.array(
     })
     .transform((x) => {
       return {
-        kind: "qiita",
+        kind: "external",
+        category: "qiita",
         id: x.id,
         title: x.title,
         href: x.url,

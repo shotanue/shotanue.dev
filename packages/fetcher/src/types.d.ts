@@ -1,27 +1,20 @@
-export type Entry = Hatena | Qiita | Esa;
+export type Entry = ExternalEntry | WithContent;
 
-export type Hatena = {
-  kind: "hatena";
-  id: string;
+export type ExternalEntry = {
+  kind: "external";
+  category: string;
   title: string;
   href: string;
   publishedAt: string;
   updatedAt: string;
 };
-export type Qiita = {
-  kind: "qiita";
-  id: string;
-  title: string;
+
+export type WithContent = {
+  kind: "withContent";
+  category: string;
   href: string;
-  publishedAt: string;
-  updatedAt: string;
-};
-export type Esa = {
-  kind: "esa";
-  id: string;
   title: string;
-  href: string;
-  publishedAt: string;
-  updatedAt: string;
   content: string;
+  publishedAt: string;
+  updatedAt: string;
 };
