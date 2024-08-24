@@ -1,5 +1,6 @@
-import { LabelledIcon, Layout, Stack, StackItem } from "@repo/ui";
+import { LabelledIcon, Layout, Logo, Stack, StackItem } from "@repo/ui";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import "@repo/ui/index.css";
 
@@ -17,6 +18,11 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <Layout
+          header={
+            <Link href="/">
+              <Logo />
+            </Link>
+          }
           aside={
             <Stack>
               <StackItem>
