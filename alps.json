@@ -1,0 +1,112 @@
+{
+  "$schema": "https://alps-io.github.io/schemas/alps.json",
+  "alps": {
+    "descriptor": [
+      {
+        "id": "identifier",
+        "type": "semantic",
+        "def": "https://schema.org/identifier"
+      },
+      {
+        "id": "name",
+        "type": "semantic",
+        "def": "https://schema.org/name"
+      },
+      {
+        "id": "articleBody",
+        "type": "semantic",
+        "def": "https://schema.org/articleBody"
+      },
+      {
+        "id": "datePublished",
+        "type": "semantic",
+        "def": "https://schema.org/datePublished"
+      },
+      {
+        "id": "dateModified",
+        "type": "semantic",
+        "def": "https://schema.org/dateModified"
+      },
+      {
+        "id": "tags",
+        "type": "semantic",
+        "def": "https://schema.org/keywords"
+      },
+      {
+        "id": "category",
+        "type": "semantic",
+        "def": "https://schema.org/category"
+      },
+      {
+        "id": "Readme",
+        "type": "semantic",
+        "def": "https://schema.org/description",
+        "descriptor": [{ "href": "#articleBody" }]
+      },
+      {
+        "id": "Article",
+        "type": "semantic",
+        "def": "https://schema.org/Article",
+        "descriptor": [
+          { "href": "#identifier" },
+          { "href": "#name" },
+          { "href": "#category" },
+          { "href": "#tags" },
+          { "href": "#articleBody" },
+          { "href": "#publishedAt" },
+          { "href": "#updatedAt" }
+        ]
+      },
+      {
+        "id": "ArticleCollection",
+        "type": "semantic",
+        "def": "https://schema.org/Collection",
+        "descriptor": [{ "href": "#Article" }, { "href": "#goArticle" }]
+      },
+      {
+        "id": "LatestArticleCollection",
+        "type": "semantic",
+        "def": "https://schema.org/Collection",
+        "descriptor": [{ "href": "#ArticleCollection" }]
+      },
+      {
+        "id": "CategorizedArticleCollection",
+        "type": "semantic",
+        "def": "https://schema.org/Collection",
+        "descriptor": [
+          { "href": "#ArticleCollection" },
+          { "href": "#filterByCategory" }
+        ],
+        "tag": "primary"
+      },
+      {
+        "id": "TaggedArticleCollection",
+        "type": "semantic",
+        "def": "https://schema.org/Collection",
+        "descriptor": [
+          { "href": "tags" },
+          { "href": "#ArticleCollection" },
+          { "href": "#filterByTag" }
+        ],
+        "tag": "primary"
+      },
+      {
+        "id": "Welcome",
+        "type": "semantic",
+        "def": "https://schema.org/Guide",
+        "descriptor": [
+          { "href": "#Readme" },
+          { "href": "#LatestArticleCollection" }
+        ],
+        "tag": "primary"
+      },
+      { "id": "goArticle", "type": "safe", "rt": "#Article" },
+      { "id": "filterByTag", "type": "safe", "rt": "#TaggedArticleCollection" },
+      {
+        "id": "filterByCategory",
+        "type": "safe",
+        "rt": "#CategorizedArticleCollection"
+      }
+    ]
+  }
+}
