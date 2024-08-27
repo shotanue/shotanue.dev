@@ -10,11 +10,13 @@ const all = [
 ];
 
 export const allPosts = async (): Promise<Entry[]> => {
-  return all.sort((a, b) => {
-    return (
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    );
-  });
+  return all
+    .filter((x) => x.title !== "README")
+    .sort((a, b) => {
+      return (
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      );
+    });
 };
 
 export const readme = async (): Promise<string> => {

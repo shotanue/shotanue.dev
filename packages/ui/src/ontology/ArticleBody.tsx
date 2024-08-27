@@ -1,8 +1,10 @@
-import { default as Rernderer } from "react-markdown";
+import type { ArticleBody as Descriptor } from "../descriptor";
 
-export const Markdown = (props: { children: string }) => {
+import Markdown from "react-markdown";
+
+export const ArticleBody: React.FC<{ children: Descriptor }> = (props) => {
   return (
-    <Rernderer
+    <Markdown
       components={{
         h1: ({ children }) => (
           <h1 className="text-3xl font-bold mt-10 mb-5 border-b-4 pb-3 text-gray-800">
@@ -76,6 +78,6 @@ export const Markdown = (props: { children: string }) => {
       }}
     >
       {props.children}
-    </Rernderer>
+    </Markdown>
   );
 };

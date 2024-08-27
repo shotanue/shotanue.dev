@@ -25,19 +25,25 @@ export default function RootLayout({
           }
           aside={
             <Stack>
-              <StackItem>
-                <LabelledIcon icon="i-heroicons-home" selected>
-                  HOME
-                </LabelledIcon>
-              </StackItem>
-              <StackItem>
-                <LabelledIcon icon="i-heroicons-document-text">
-                  POSTS
-                </LabelledIcon>
-              </StackItem>
-              <StackItem>
-                <LabelledIcon icon="i-heroicons-tag">TAGS</LabelledIcon>
-              </StackItem>
+              <Link href="/">
+                <StackItem>
+                  <LabelledIcon icon="i-heroicons-home" selected>
+                    HOME
+                  </LabelledIcon>
+                </StackItem>
+              </Link>
+              <Link href="/posts">
+                <StackItem>
+                  <LabelledIcon icon="i-heroicons-document-text">
+                    POSTS
+                  </LabelledIcon>
+                </StackItem>
+              </Link>
+              <Link href="/tags">
+                <StackItem>
+                  <LabelledIcon icon="i-heroicons-tag">TAGS</LabelledIcon>
+                </StackItem>
+              </Link>
             </Stack>
           }
         >
