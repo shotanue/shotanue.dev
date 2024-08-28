@@ -5,6 +5,7 @@ import Markdown from "react-markdown";
 export const ArticleBody: React.FC<{ children: Descriptor }> = (props) => {
   return (
     <Markdown
+      className="p-4"
       components={{
         h1: ({ children }) => (
           <h1 className="text-3xl font-bold mt-10 mb-5 border-b-4 pb-3 text-gray-800">

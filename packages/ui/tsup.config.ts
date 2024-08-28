@@ -4,9 +4,9 @@ export default defineConfig({
   entry: ["./src/index.tsx"],
   target: "esnext",
   format: ["esm"],
-  clean: false,
+  clean: true,
   dts: true,
   treeshake: true,
-  minify: true,
+  minify: false,
   sourcemap: true,
 });

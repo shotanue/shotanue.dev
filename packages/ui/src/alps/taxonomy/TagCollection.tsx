@@ -1,15 +1,16 @@
 import type { TagCollection as Descriptor } from "../descriptor";
-import { Stack } from "../layoutPrimitive/Stack";
 import { Tag } from "../ontology/Tag";
 
 export const TagCollection: React.FC<{ tagCollection: Descriptor }> = ({
   tagCollection,
 }) => {
   return (
-    <Stack>
+    <ul>
       {tagCollection.map((tag) => (
-        <Tag key={`${tag}`}>{tag}</Tag>
+        <li key={`${tag}`}>
+          <Tag>{tag}</Tag>
+        </li>
       ))}
-    </Stack>
+    </ul>
   );
 };
