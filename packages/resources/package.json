@@ -23,12 +23,12 @@
   "keywords": [],
   "dependencies": {
     "@repo/fetcher": "workspace:*",
-    "axios": "1.7.4",
-    "bun": "1.1.25",
+    "axios": "1.7.7",
+    "bun": "1.1.29",
     "zod": "3.23.8"
   },
   "devDependencies": {
-    "bun-types": "1.1.25",
-    "tsup": "8.2.4"
+    "bun-types": "1.1.29",
+    "tsup": "8.3.0"
   }
 }
