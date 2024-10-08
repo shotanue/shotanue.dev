@@ -20,7 +20,7 @@
     "html-minifier": "4.0.0"
   },
   "peerDependencies": {
-    "typescript": "5.3.3"
+    "typescript": "5.6.3"
   },
   "scripts": {
     "dev": "bun run scripts/dev.ts",
