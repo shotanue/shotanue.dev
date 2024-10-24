@@ -15,7 +15,7 @@
     "@types/html-minifier": "4.0.5",
     "@types/mustache": "4.2.5",
     "browser-sync": "3.0.0",
-    "bun-types": "1.0.22",
+    "bun-types": "1.1.33",
     "feed": "4.2.2",
     "html-minifier": "4.0.0"
   },
