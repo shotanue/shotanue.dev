@@ -1,6 +1,6 @@
-import type { DateModified as Descriptor } from "../descriptor";
-import { format, formatDistance, constructNow } from "date-fns";
+import { constructNow, format, formatDistance } from "date-fns";
 import { ja } from "date-fns/locale";
+import type { DateModified as Descriptor } from "../descriptor";
 
 /**
  * A component that displays the date modified.
@@ -20,15 +20,11 @@ export const DateModified: React.FC<{
       <div className="flex gap-2">
         <span>{format(children, "yyyy-MM-dd")}</span>
         <span>
-          {formatDistance(
-            children,
-            from ?? constructNow(new Date()).setHours(0, 0, 0, 0),
-            {
-              locale: ja,
-              addSuffix: true,
-              includeSeconds: false,
-            },
-          )}
+          {formatDistance(children, from ?? constructNow(new Date()).setHours(0, 0, 0, 0), {
+            locale: ja,
+            addSuffix: true,
+            includeSeconds: false,
+          })}
         </span>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import {
   fetchHatenaPosts,
-  fetchQiitaPosts,
   fetchLocalPosts,
+  fetchQiitaPosts,
 } from "../src";
 
 import * as fs from "node:fs"

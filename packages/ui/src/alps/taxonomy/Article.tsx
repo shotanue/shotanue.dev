@@ -7,15 +7,7 @@ import { Identifier } from "../ontology/Identifier";
 import { Name } from "../ontology/Name";
 import { Tag } from "../ontology/Tag";
 
-export const Article: React.FC<Descriptor> = ({
-  articleBody,
-  category,
-  dateModified,
-  datePublished,
-  identifier,
-  name,
-  tagCollection,
-}) => {
+export const Article: React.FC<Descriptor> = ({ articleBody, category, dateModified, datePublished, identifier, name, tagCollection }) => {
   return (
     <section>
       <Identifier>{identifier}</Identifier>

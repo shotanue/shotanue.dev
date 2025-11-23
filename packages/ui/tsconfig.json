@@ -1,9 +1,7 @@
 {
   "extends": "@repo/tsconfig",
   "compilerOptions": {
-    "lib": [
-      "ESNext"
-    ],
+    "lib": ["ESNext", "DOM"],
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   }
