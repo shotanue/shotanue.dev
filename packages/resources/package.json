@@ -15,20 +15,20 @@
     }
   },
   "scripts": {
-    "prebuild": "bun scripts/build.ts",
-    "build": "tsup",
-    "predev": "bun scripts/dev.ts",
-    "dev": "tsup"
+    "refresh-posts": "tsx scripts/refresh-posts.ts"
   },
   "keywords": [],
   "dependencies": {
-    "@repo/fetcher": "workspace:*",
-    "axios": "1.7.7",
-    "bun": "1.1.29",
+    "feed": "4.2.2",
+    "xml2js": "0.6.2",
     "zod": "3.23.8"
   },
   "devDependencies": {
-    "bun-types": "1.1.29",
-    "tsup": "8.3.0"
+    "@repo/tsconfig": "workspace:*",
+    "@types/node": "22.5.5",
+    "@types/xml2js": "0.4.14",
+    "orval": "7.1.1",
+    "tsup": "8.3.0",
+    "tsx": "4.20.6"
   }
 }

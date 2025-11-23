@@ -25,6 +25,7 @@
     "react-markdown": "9.0.1"
   },
   "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
     "@egoist/tailwindcss-icons": "1.8.1",
     "@iconify-json/heroicons": "1.2.0",
     "@types/react": "18.3.8",
