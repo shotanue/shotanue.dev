@@ -8,7 +8,7 @@
   },
   "packageManager": "pnpm@10.23.0",
   "scripts": {
-    "dev": "turbo watch dev",
+    "dev": "turbo watch dev --filter web",
     "build": "turbo build",
     "typecheck": "turbo typecheck",
     "test": "turbo test",

@@ -262,6 +262,9 @@ importers:
 
   packages/web:
     dependencies:
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../ui
       next:
         specifier: 16.0.3
         version: 16.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -272,6 +275,9 @@ importers:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      '@egoist/tailwindcss-icons':
+        specifier: 'catalog:'
+        version: 1.8.1(tailwindcss@3.4.12)
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig

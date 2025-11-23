@@ -11,9 +11,11 @@
   "dependencies": {
     "next": "16.0.3",
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "@repo/ui": "workspace:*"
   },
   "devDependencies": {
+    "@egoist/tailwindcss-icons": "catalog:",
     "@repo/tsconfig": "workspace:*",
     "@types/node": "^20",
     "@types/react": "catalog:",
