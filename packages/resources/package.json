@@ -21,19 +21,19 @@
   },
   "keywords": [],
   "dependencies": {
-    "feed": "4.2.2",
-    "gray-matter": "^4.0.3",
-    "xml2js": "0.6.2",
-    "zod": "3.23.8"
+    "feed": "catalog:",
+    "gray-matter": "catalog:",
+    "xml2js": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",
-    "@types/js-yaml": "^4.0.9",
-    "@types/node": "22.5.5",
-    "@types/xml2js": "0.4.14",
-    "orval": "7.1.1",
-    "tsup": "8.3.0",
-    "tsx": "4.20.6",
-    "vitest": "^4.0.13"
+    "@types/js-yaml": "catalog:",
+    "@types/node": "catalog:",
+    "@types/xml2js": "catalog:",
+    "orval": "catalog:",
+    "tsup": "catalog:",
+    "tsx": "catalog:",
+    "vitest": "catalog:"
   }
 }
