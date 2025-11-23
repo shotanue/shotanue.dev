@@ -1,6 +1,7 @@
 import {
   fetchHatenaPosts,
   fetchQiitaPosts,
+  fetchLocalPosts,
 } from "../src";
 
 import * as fs from "node:fs"
@@ -9,11 +10,12 @@ const main = async () => {
   const fetching = Promise.all([
     fetchHatenaPosts({ userName: "shotanue" }),
     fetchQiitaPosts({ userName: "shotanue" }),
+    fetchLocalPosts(),
   ]);
 
-  const [hatena, qiita] = await fetching;
+  const [hatena, qiita, local] = await fetching;
 
-  const all = [...hatena, ...qiita];
+  const all = [...hatena, ...qiita, ...local];
 
   const cwd = process.cwd();
 

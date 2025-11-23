@@ -11,6 +11,7 @@
     "dev": "turbo watch dev",
     "build": "turbo build",
     "typecheck": "turbo typecheck",
+    "test": "turbo test",
     "check": "biome check",
     "check:fix": "biome check --write"
   },
