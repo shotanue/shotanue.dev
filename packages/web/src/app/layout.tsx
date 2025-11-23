@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { GeometricPattern, Layout } from "@repo/ui"
+import { Layout } from "@repo/ui"
 import "@repo/ui/index.css";
 
 export const metadata: Metadata = {
-  title: "Web",
-  description: "Web",
+  title: "shotanue.dev",
+  description: "@shotanue's homepage",
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body>
         <Layout>
           {children}
