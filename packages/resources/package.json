@@ -15,7 +15,8 @@
     }
   },
   "scripts": {
-    "refresh-posts": "tsx scripts/refresh-posts.ts"
+    "refresh-posts": "tsx scripts/refresh-posts.ts",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [],
   "dependencies": {

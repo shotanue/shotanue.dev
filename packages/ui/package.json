@@ -17,7 +17,8 @@
     "./index.css": "./dist/index.css"
   },
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "classnames": "2.5.1",
