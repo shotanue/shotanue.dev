@@ -17,3 +17,4 @@ export { TaggedArticleCollection } from "./alps/taxonomy/TaggedArticleCollection
 export { Welcome } from "./alps/taxonomy/Welcome";
 
 export { GeometricPattern } from "./primitive/GeometricPattern";
+export { Logo } from "./primitive/Logo";
