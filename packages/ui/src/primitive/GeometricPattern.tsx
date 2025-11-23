@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface Triangle {
   points: [number, number][];
@@ -17,8 +17,10 @@ interface GeometricPatternProps {
 
 // Seeded random number generator (Mulberry32)
 function createSeededRandom(seed: number) {
+  let s = seed;
   return () => {
-    let t = (seed += 0x6d2b79f5);
+    s = s + 0x6d2b79f5;
+    let t = s;
     t = Math.imul(t ^ (t >>> 15), t | 1);
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
@@ -56,33 +58,36 @@ export function GeometricPattern({
     };
   }, []);
 
-  const drawPattern = (ctx: CanvasRenderingContext2D, width: number, height: number) => {
-    // Clear canvas
-    ctx.fillStyle = backgroundColor;
-    ctx.fillRect(0, 0, width, height);
+  const drawPattern = useCallback(
+    (ctx: CanvasRenderingContext2D, width: number, height: number) => {
+      // Clear canvas
+      ctx.fillStyle = backgroundColor;
+      ctx.fillRect(0, 0, width, height);
 
-    // Create random function (seeded or default)
-    const random = seed !== undefined ? createSeededRandom(seed) : Math.random;
+      // Create random function (seeded or default)
+      const random = seed !== undefined ? createSeededRandom(seed) : Math.random;
 
-    // Generate triangles
-    const triangles = generateTriangles(width, height, triangleCount, colorPalette, displacementFactor, random);
+      // Generate triangles
+      const triangles = generateTriangles(width, height, triangleCount, colorPalette, displacementFactor, random);
 
-    // Draw triangles
-    triangles.forEach((triangle) => {
-      ctx.fillStyle = triangle.color;
-      ctx.beginPath();
-      ctx.moveTo(triangle.points[0][0], triangle.points[0][1]);
-      ctx.lineTo(triangle.points[1][0], triangle.points[1][1]);
-      ctx.lineTo(triangle.points[2][0], triangle.points[2][1]);
-      ctx.closePath();
-      ctx.fill();
+      // Draw triangles
+      for (const triangle of triangles) {
+        ctx.fillStyle = triangle.color;
+        ctx.beginPath();
+        ctx.moveTo(triangle.points[0][0], triangle.points[0][1]);
+        ctx.lineTo(triangle.points[1][0], triangle.points[1][1]);
+        ctx.lineTo(triangle.points[2][0], triangle.points[2][1]);
+        ctx.closePath();
+        ctx.fill();
 
-      // Add subtle stroke for depth
-      ctx.strokeStyle = `rgba(0, 0, 0, ${strokeOpacity})`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    });
-  };
+        // Add subtle stroke for depth
+        ctx.strokeStyle = `rgba(0, 0, 0, ${strokeOpacity})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    },
+    [backgroundColor, triangleCount, colorPalette, strokeOpacity, displacementFactor, seed],
+  );
 
   const generateTriangles = (
     width: number,

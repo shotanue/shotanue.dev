@@ -23,7 +23,7 @@ updatedAt: 2023-01-02
     });
 
     it("should throw error if frontmatter is missing", () => {
-        const content = `# Content only`;
+        const content = "# Content only";
         const id = "no-frontmatter";
         expect(() => parsePost(content, id)).toThrowError(/Frontmatter not found/);
     });
