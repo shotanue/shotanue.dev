@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GeometricPattern, Layout } from "@repo/ui"
 import "@repo/ui/index.css";
 
 export const metadata: Metadata = {
@@ -13,7 +14,11 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en">
-      <body><>{children}</></body>
+      <body>
+        <Layout>
+          {children}
+        </Layout>
+      </body>
     </html>
   );
 }

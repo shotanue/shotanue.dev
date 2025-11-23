@@ -24,6 +24,7 @@
   "dependencies": {
     "classnames": "catalog:",
     "date-fns": "catalog:",
+    "motion": "12.23.24",
     "react-markdown": "catalog:"
   },
   "devDependencies": {
@@ -31,6 +32,7 @@
     "@iconify-json/heroicons": "catalog:",
     "@repo/tsconfig": "workspace:*",
     "@storybook/react": "catalog:",
+    "@tailwindcss/postcss": "4.1.17",
     "@types/react": "catalog:",
     "autoprefixer": "catalog:",
     "postcss": "catalog:",

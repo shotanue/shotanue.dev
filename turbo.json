@@ -1,21 +1,41 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["ESA_TOKEN", "ESA_TEAM_NAME", "ESA_CATEGORY", "HATENA_USERNAME", "QIITA_USERNAME"],
+  "globalEnv": [
+    "ESA_TOKEN",
+    "ESA_TEAM_NAME",
+    "ESA_CATEGORY",
+    "HATENA_USERNAME",
+    "QIITA_USERNAME"
+  ],
   "ui": "stream",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "dist/**"
+      ],
+      "cache": false
     },
     "typecheck": {
-      "dependsOn": ["^typecheck"]
+      "dependsOn": [
+        "^typecheck"
+      ]
     },
     "test": {
-      "dependsOn": ["^test"]
+      "dependsOn": [
+        "^test"
+      ]
     },
     "dev": {
-      "dependsOn": ["^build"],
-      "persistent": true
+      "dependsOn": [
+        "^build"
+      ],
+      "persistent": true,
+      "cache": false
     }
   }
 }

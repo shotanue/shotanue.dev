@@ -1,19 +1,27 @@
+import { GeometricPattern } from "../primitive/GeometricPattern";
+
 export const Layout = ({
   children,
-  header,
-  aside,
 }: {
   children: React.ReactNode;
-  header: React.ReactNode;
-  aside: React.ReactNode;
 }) => {
   return (
-    <div className=" grid grid-cols-[80px_auto] grid-rows-[auto_1fr] ">
-      <header className="sticky top-0 z-10 col-span-2 grid grid-cols-[300px_auto] justify-start items-baseline px-4 py-2 bg-white">{header}</header>
-      <aside>
-        <nav>{aside}</nav>
-      </aside>
-      <main>{children}</main>
+    <div className="min-h-screen w-dvw h-dvh">
+      <div className="relative w-full h-full">
+        <GeometricPattern
+          seed={42}
+          triangleCount={100}
+          backgroundColor="#18181b"
+          colorPalette={["#09090b", "#18181b", "#27272a", "#3f3f46", "#52525b"]}
+          strokeOpacity={0.15}
+          displacementFactor={0.9}
+        />
+        <div className="absolute left-0 top-0 w-full h-full py-4">
+          <div className="max-w-7xl h-full mx-auto text-zinc-200">
+            {children}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

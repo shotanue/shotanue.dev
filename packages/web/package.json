@@ -15,11 +15,10 @@
     "@repo/ui": "workspace:*"
   },
   "devDependencies": {
-    "@egoist/tailwindcss-icons": "catalog:",
     "@repo/tsconfig": "workspace:*",
-    "@types/node": "^20",
+    "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "typescript": "^5"
+    "typescript": "catalog:"
   }
 }
