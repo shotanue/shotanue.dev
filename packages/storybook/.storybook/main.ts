@@ -23,5 +23,12 @@ const config: StorybookConfig = {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
+  refs: {
+    sunaba: {
+      title: "Sunaba",
+      url: "https://shotanue.github.io/sunaba/",
+      expanded: true,
+    },
+  },
 };
 export default config;
