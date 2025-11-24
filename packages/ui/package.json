@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@repo/ui",
+  "description": "UI components",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "files": ["dist", "package.json"],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./index.css": "./dist/input.css"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "classnames": "catalog:",
+    "date-fns": "catalog:",
+    "motion": "12.23.24",
+    "react-markdown": "catalog:"
+  },
+  "devDependencies": {
+    "@egoist/tailwindcss-icons": "catalog:",
+    "@iconify-json/heroicons": "catalog:",
+    "@repo/tsconfig": "workspace:*",
+    "@storybook/react": "catalog:",
+    "@tailwindcss/postcss": "4.1.17",
+    "@types/react": "catalog:",
+    "autoprefixer": "catalog:",
+    "postcss": "catalog:",
+    "tailwindcss": "catalog:",
+    "tsup": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "next": "16.0.3"
+  }
+}

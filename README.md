@@ -2,20 +2,12 @@
 
 # [shotanue.dev](https://shotanue.dev)
 
-## requirements
-
-- [bun.sh](https://bun.sh)
-
 ## setup
 
-```bash
-mise install
+```sh
+pnpm i
 ```
 
-## How to develop
-
 ```bash
-bun run dev
+pnpm dev
 ```
-
-

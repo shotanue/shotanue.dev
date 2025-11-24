@@ -1,34 +1,25 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "shotanue.dev",
-  "main": "src/index.ts",
-  "module": "src/index.ts",
-  "type": "module",
-  "dependencies": {
-    "just-sort-by": "3.2.0",
-    "mustache": "4.2.0",
-    "zod": "3.22.4"
+  "private": true,
+  "description": "shotanue.dev",
+  "engines": {
+    "node": ">= 22.6.0"
+  },
+  "packageManager": "pnpm@10.23.0",
+  "scripts": {
+    "dev": "turbo watch dev --filter web",
+    "build": "turbo build",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "check": "pnpm typecheck && pnpm test && pnpm lint",
+    "lint": "biome check",
+    "lint:fix": "biome check --write --unsafe",
+    "storybook": "pnpm --parallel --filter @repo/ui --filter @repo/storybook dev"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.4.1",
-    "@types/browser-sync": "2.29.0",
-    "@types/html-minifier": "4.0.5",
-    "@types/mustache": "4.2.5",
-    "browser-sync": "3.0.0",
-    "bun-types": "1.0.22",
-    "feed": "4.2.2",
-    "html-minifier": "4.0.0"
-  },
-  "peerDependencies": {
-    "typescript": "5.3.3"
-  },
-  "scripts": {
-    "dev": "bun run scripts/dev.ts",
-    "build": "bun run scripts/build.ts",
-    "pullFeeds": "bun run scripts/pullFeeds.ts",
-    "test": "bun test",
-    "check": "biome check .",
-    "check:fix": "biome check --apply-unsafe .",
-    "ci": "biome ci ."
+    "@biomejs/biome": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:"
   }
 }

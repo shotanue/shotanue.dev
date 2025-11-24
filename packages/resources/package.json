@@ -1,0 +1,40 @@
+{
+  "name": "@repo/resources",
+  "author": "@shotanue",
+  "license": "",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "refresh-posts": "tsx scripts/refresh-posts.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "dependencies": {
+    "feed": "catalog:",
+    "gray-matter": "catalog:",
+    "xml2js": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "@types/js-yaml": "catalog:",
+    "@types/node": "catalog:",
+    "@types/xml2js": "catalog:",
+    "orval": "catalog:",
+    "tsup": "catalog:",
+    "tsx": "catalog:",
+    "vitest": "catalog:"
+  }
+}
