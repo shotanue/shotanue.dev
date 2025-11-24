@@ -21,7 +21,7 @@ catalog:
   autoprefixer: 10.4.20
   classnames: 2.5.1
   date-fns: 4.1.0
-  feed: 4.2.2
+  feed: 5.1.0
   gray-matter: 4.0.3
   orval: 7.1.1
   playwright: 1.56.1
