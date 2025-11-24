@@ -15,6 +15,7 @@ export { Readme } from "./alps/taxonomy/Readme";
 export { TagCollection } from "./alps/taxonomy/TagCollection";
 export { TaggedArticleCollection } from "./alps/taxonomy/TaggedArticleCollection";
 export { Welcome } from "./alps/taxonomy/Welcome";
+export { TagFilter } from "./alps/taxonomy/TagFilter";
 
 export { GeometricPattern } from "./primitive/GeometricPattern";
 export { Logo } from "./primitive/Logo";

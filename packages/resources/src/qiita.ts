@@ -19,6 +19,7 @@ const schema = z.array(
         href: x.url,
         publishedAt: x.created_at,
         updatedAt: x.updated_at,
+        tags: [] as string[],
       } as const;
     }),
 );

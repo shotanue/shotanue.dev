@@ -1,60 +1,91 @@
-// import { ArticleCollection } from "./ArticleCollection";
-// import { Readme } from "./Readme";
-
-// import type { Welcome as Descriptor } from "../descriptor";
+import React from "react";
 import { motion } from "motion/react";
+import { Layout } from "../../layout/Layout";
+import { ArticleCard } from "../ontology/ArticleCard";
 
-export const Welcome = () => {
+interface WelcomeProps {
+  recentArticles: Array<{
+    title: string;
+    publishedAt: string;
+    href: string;
+    kind?: string;
+    category?: string;
+  }>;
+}
+
+export const Welcome: React.FC<WelcomeProps> = ({ recentArticles }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="backdrop-blur-lg bg-zinc-900/70 rounded-xl border border-zinc-800 shadow-2xl px-4 py-8 lg:px-8"
-    >
+    <Layout>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="mb-12"
+        transition={{ duration: 0.5 }}
+        className="space-y-12"
       >
-        hello world
-        {/* <MarkdownRenderer content={readme.articleBody} /> */}
+        {/* Intro Section */}
+        <section className="space-y-6">
+          <div className="flex items-baseline gap-2">
+            <span className="text-zinc-500 font-mono">##</span>
+            <h2 className="text-xl font-bold text-zinc-200">Welcome to Tech Blog</h2>
+          </div>
+
+          <div className="prose prose-invert max-w-none text-zinc-400">
+            <p>
+              This is a technical blog where I share insights, tutorials, and thoughts about software development, web technologies, and engineering practices.
+            </p>
+          </div>
+        </section>
+
+        {/* What You'll Find Here Section */}
+        <section className="space-y-6">
+          <div className="flex items-baseline gap-2">
+            <span className="text-zinc-500 font-mono">##</span>
+            <h2 className="text-xl font-bold text-zinc-200">What You'll Find Here</h2>
+          </div>
+
+          <div className="space-y-4 text-zinc-400">
+            <ul className="space-y-2 list-disc list-inside marker:text-zinc-600">
+              <li>
+                <strong className="text-zinc-200">**Web Development**:</strong> Deep dives into React, TypeScript, and modern frontend frameworks
+              </li>
+              <li>
+                <strong className="text-zinc-200">**System Design**:</strong> Architecture patterns and best practices
+              </li>
+              <li>
+                <strong className="text-zinc-200">**DevOps**:</strong> CI/CD, containerization, and cloud infrastructure
+              </li>
+              <li>
+                <strong className="text-zinc-200">**Programming Concepts**:</strong> Algorithms, data structures, and design patterns
+              </li>
+            </ul>
+            <p className="pt-4">
+              Feel free to explore the articles below and reach out if you have any questions!
+            </p>
+            <p>
+              <strong className="text-zinc-200">**[Contact me](mailto:hello@example.com)**</strong>
+            </p>
+          </div>
+        </section>
+
+        {/* Recent Articles Section */}
+        <section className="space-y-6">
+          <div className="flex items-baseline gap-2">
+            <span className="text-zinc-500 font-mono">##</span>
+            <h2 className="text-xl font-bold text-zinc-200">Recent Articles</h2>
+            <span className="text-zinc-500 text-sm font-mono ml-2">(last 10 posts)</span>
+          </div>
+
+          <div className="grid gap-4">
+            {recentArticles.map((article, index) => (
+              <ArticleCard
+                key={article.href}
+                article={article}
+                index={index}
+              />
+            ))}
+          </div>
+        </section>
       </motion.div>
-
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        {/* <Separator className="my-8 bg-zinc-800" /> */}
-        aaa
-      </motion.div>
-
-      <section>
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex items-baseline gap-2 mb-6"
-        >
-          <span className="text-zinc-500">##</span>
-          <h2 className="text-zinc-200">Recent Articles</h2>
-          <span className="text-zinc-400 text-sm ml-2">(last 10 posts)</span>
-        </motion.div>
-
-        <div className="space-y-4">
-          posts
-          {/* {recentArticles.map((article, index) => (
-            <ArticleCard
-              key={article.identifier}
-              article={article}
-              index={index}
-              onClick={() => onArticleClick(article.identifier)}
-            />
-          ))} */}
-        </div>
-      </section>
-    </motion.div>
+    </Layout>
   );
 };

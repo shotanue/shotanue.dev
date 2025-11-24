@@ -7,6 +7,7 @@ export type ExternalEntry = {
   href: string;
   publishedAt: string;
   updatedAt: string;
+  tags: string[];
 };
 
 export type WithContent = {
@@ -17,4 +18,5 @@ export type WithContent = {
   content: string;
   publishedAt: string;
   updatedAt: string;
+  tags: string[];
 };

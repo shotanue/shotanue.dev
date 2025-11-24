@@ -4,12 +4,30 @@ import yaml from "js-yaml";
 import { z } from "zod";
 import type { Entry } from "./types";
 
-const articlesDir = path.join(process.cwd(), "articles");
+const findArticlesDir = () => {
+    const potentialPaths = [
+        path.join(process.cwd(), "articles"), // When running from packages/resources
+        path.join(process.cwd(), "../../packages/resources/articles"), // When running from packages/web
+        path.join(process.cwd(), "packages/resources/articles"), // When running from root
+    ];
+
+    for (const p of potentialPaths) {
+        if (fs.existsSync(p)) {
+            return p;
+        }
+    }
+    // Fallback to default if not found (though it should be found in one of the above)
+    return path.join(process.cwd(), "articles");
+};
+
+const articlesDir = findArticlesDir();
 
 const frontmatterSchema = z.object({
     title: z.string(),
     publishedAt: z.union([z.string(), z.date()]).transform((v) => new Date(v).toISOString()),
     updatedAt: z.union([z.string(), z.date()]).transform((v) => new Date(v).toISOString()),
+    tags: z.array(z.string()).optional(),
+    keywords: z.string().optional(),
 });
 
 export const parsePost = (content: string, id: string): Entry => {
@@ -23,6 +41,9 @@ export const parsePost = (content: string, id: string): Entry => {
 
     const parsedData = frontmatterSchema.parse(data);
 
+    // Normalize tags: use tags array if present, otherwise split keywords string
+    const tags = parsedData.tags || (parsedData.keywords ? parsedData.keywords.split(",").map(t => t.trim()) : []);
+
     return {
         kind: "external",
         category: "internal",
@@ -30,6 +51,7 @@ export const parsePost = (content: string, id: string): Entry => {
         href: `/articles/${id}`,
         publishedAt: parsedData.publishedAt,
         updatedAt: parsedData.updatedAt,
+        tags: tags,
     } as const;
 };
 
