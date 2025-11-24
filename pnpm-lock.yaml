@@ -16,8 +16,8 @@ catalogs:
       specifier: 1.8.1
       version: 1.8.1
     '@iconify-json/heroicons':
-      specifier: 1.2.0
-      version: 1.2.0
+      specifier: 1.2.3
+      version: 1.2.3
     '@storybook/addon-a11y':
       specifier: 10.0.8
       version: 10.0.8
@@ -243,7 +243,7 @@ importers:
         version: 1.8.1(tailwindcss@4.1.17)
       '@iconify-json/heroicons':
         specifier: 'catalog:'
-        version: 1.2.0
+        version: 1.2.3
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -931,8 +931,8 @@ packages:
     resolution: {integrity: sha512-lOxglXIzUZwsw5WsbgZraxxzAYMdXYyiMNOioxYJYTd55ZuN4XEERoPdV5v1oPTdKedHEUSQu5siiSHToENFdA==}
     engines: {node: '>=16.0.0'}
 
-  '@iconify-json/heroicons@1.2.0':
-    resolution: {integrity: sha512-EmvGN0L9EUJCmQ82rkLGZ4tkz0YGQfZV7ugKT6UvHni/bxNitQrD0gLj6NJj2W9zsSoXyNHyCX236+EJmO4pmA==}
+  '@iconify-json/heroicons@1.2.3':
+    resolution: {integrity: sha512-n+vmCEgTesRsOpp5AB5ILB6srsgsYK+bieoQBNlafvoEhjVXLq8nIGN4B0v/s4DUfa0dOrjwE/cKJgIKdJXOEg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -4466,7 +4466,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@iconify-json/heroicons@1.2.0':
+  '@iconify-json/heroicons@1.2.3':
     dependencies:
       '@iconify/types': 2.0.0
 
