@@ -5,11 +5,13 @@ export async function generateStaticParams() {
   const posts = await fetchLocalPosts();
   const tags = new Set<string>();
 
-  posts.forEach((post) => {
+  for (const post of posts) {
     if (post.tags) {
-      post.tags.forEach((tag) => tags.add(tag));
+      for (const tag of post.tags) {
+        tags.add(tag);
+      }
     }
-  });
+  }
 
   return Array.from(tags).map((tag) => ({
     tag: tag,

@@ -92,7 +92,7 @@ export const Article: React.FC<ArticleProps> = ({ name, articleBody, datePublish
                   {children}
                 </blockquote>
               ),
-              code: ({ className, children, ...props }: any) => {
+              code: ({ className, children, ...props }: React.HTMLAttributes<HTMLElement>) => {
                 const match = /language-(\w+)/.exec(className || "");
                 const isInline = !match;
                 return isInline ? (
@@ -137,6 +137,7 @@ export const Article: React.FC<ArticleProps> = ({ name, articleBody, datePublish
               Back to Home
             </a>
             <button
+              type="button"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-zinc-500 hover:text-zinc-300 transition-colors flex items-center gap-2"
             >

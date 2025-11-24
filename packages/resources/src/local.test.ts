@@ -16,7 +16,7 @@ updatedAt: 2023-01-02
             kind: "external",
             category: "internal",
             title: "Hello World",
-            href: "/articles/hello-world",
+            href: "/posts/hello-world",
             publishedAt: new Date("2023-01-01").toISOString(),
             updatedAt: new Date("2023-01-02").toISOString(),
             tags: [],

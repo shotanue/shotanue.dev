@@ -90,7 +90,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ article, index, onClic
     );
   }
 
-  const LinkComponent = Link as any;
+  const LinkComponent = Link;
 
   return (
     <LinkComponent href={article.href} className="block" onClick={onClick}>
