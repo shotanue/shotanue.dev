@@ -5,10 +5,7 @@
   "private": true,
   "license": "MIT",
   "type": "module",
-  "files": [
-    "dist",
-    "package.json"
-  ],
+  "files": ["dist", "package.json"],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -41,6 +38,7 @@
   },
   "peerDependencies": {
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "next": "16.0.3"
   }
 }

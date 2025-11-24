@@ -3,19 +3,27 @@
   "organizeImports": {
     "enabled": true
   },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "include": ["**"],
+    "ignore": ["node_modules", ".next", "dist", "build", "out", ".turbo", "resources"]
+  },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true
-    },
-    "ignore": ["node_modules", "dist", ".next", ".turbo"]
+    }
   },
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 150,
-    "ignore": ["resources", "node_modules", ".turbo"]
+    "lineWidth": 150
   }
 }

@@ -14,7 +14,7 @@
     "test": "turbo test",
     "check": "pnpm typecheck && pnpm test && pnpm lint",
     "lint": "biome check",
-    "lint:fix": "biome check --write",
+    "lint:fix": "biome check --write --unsafe",
     "storybook": "pnpm --parallel --filter @repo/ui --filter @repo/storybook dev"
   },
   "devDependencies": {

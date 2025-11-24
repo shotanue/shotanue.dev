@@ -1,5 +1,5 @@
+import { Layout } from "@repo/ui";
 import type { Metadata } from "next";
-import { Layout } from "@repo/ui"
 import "@repo/ui/index.css";
 
 export const metadata: Metadata = {
@@ -15,9 +15,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Layout>
-          {children as any}
-        </Layout>
+        <Layout>{children as any}</Layout>
       </body>
     </html>
   );

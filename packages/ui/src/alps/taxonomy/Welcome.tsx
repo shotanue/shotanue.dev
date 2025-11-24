@@ -1,5 +1,5 @@
-import React from "react";
 import { motion } from "motion/react";
+import type React from "react";
 import { Layout } from "../../layout/Layout";
 import { ArticleCard } from "../ontology/ArticleCard";
 
@@ -17,12 +17,7 @@ interface WelcomeProps {
 export const Welcome: React.FC<WelcomeProps> = ({ recentArticles }) => {
   return (
     <Layout>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="space-y-12"
-      >
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="space-y-12">
         {/* Intro Section */}
         <section className="space-y-6">
           <div className="flex items-baseline gap-2">
@@ -32,7 +27,8 @@ export const Welcome: React.FC<WelcomeProps> = ({ recentArticles }) => {
 
           <div className="prose prose-invert max-w-none text-zinc-400">
             <p>
-              This is a technical blog where I share insights, tutorials, and thoughts about software development, web technologies, and engineering practices.
+              This is a technical blog where I share insights, tutorials, and thoughts about software development, web technologies, and engineering
+              practices.
             </p>
           </div>
         </section>
@@ -59,9 +55,7 @@ export const Welcome: React.FC<WelcomeProps> = ({ recentArticles }) => {
                 <strong className="text-zinc-200">**Programming Concepts**:</strong> Algorithms, data structures, and design patterns
               </li>
             </ul>
-            <p className="pt-4">
-              Feel free to explore the articles below and reach out if you have any questions!
-            </p>
+            <p className="pt-4">Feel free to explore the articles below and reach out if you have any questions!</p>
             <p>
               <strong className="text-zinc-200">**[Contact me](mailto:hello@example.com)**</strong>
             </p>
@@ -77,11 +71,7 @@ export const Welcome: React.FC<WelcomeProps> = ({ recentArticles }) => {
 
           <div className="grid gap-4">
             {recentArticles.map((article, index) => (
-              <ArticleCard
-                key={article.href}
-                article={article}
-                index={index}
-              />
+              <ArticleCard key={article.href} article={article} index={index} />
             ))}
           </div>
         </section>

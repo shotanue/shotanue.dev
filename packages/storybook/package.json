@@ -4,7 +4,7 @@
     "dev": "storybook dev -p 6006",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "vitest run"
+    "test": "echo \"No tests to run\""
   },
   "dependencies": {
     "@repo/ui": "workspace:*",

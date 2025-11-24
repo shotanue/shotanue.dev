@@ -1,5 +1,5 @@
+import { fetchHatenaPosts, fetchLocalPosts, fetchQiitaPosts } from "@repo/resources";
 import { Welcome } from "@repo/ui";
-import { fetchLocalPosts, fetchHatenaPosts, fetchQiitaPosts } from "@repo/resources";
 
 export default async function Home() {
   const [localPosts, hatenaPosts, qiitaPosts] = await Promise.all([
@@ -11,9 +11,7 @@ export default async function Home() {
   const allPosts = [...localPosts, ...hatenaPosts, ...qiitaPosts];
 
   // Sort posts by date descending
-  const sortedPosts = allPosts.sort((a, b) =>
-    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  );
+  const sortedPosts = allPosts.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
   // Take recent 20 posts (increased from 10 to show more variety)
   const recentPosts = sortedPosts.slice(0, 20);

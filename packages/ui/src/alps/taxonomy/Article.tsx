@@ -1,7 +1,7 @@
-import React from "react";
-import { motion } from "motion/react";
-import ReactMarkdown from "react-markdown";
 import { format } from "date-fns";
+import { motion } from "motion/react";
+import type React from "react";
+import ReactMarkdown from "react-markdown";
 import { Layout } from "../../layout/Layout";
 
 interface ArticleProps {
@@ -14,22 +14,10 @@ interface ArticleProps {
   tagCollection: string[];
 }
 
-export const Article: React.FC<ArticleProps> = ({
-  name,
-  articleBody,
-  datePublished,
-  dateModified,
-  category,
-  tagCollection,
-}) => {
+export const Article: React.FC<ArticleProps> = ({ name, articleBody, datePublished, dateModified, category, tagCollection }) => {
   return (
     <Layout>
-      <motion.article
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto"
-      >
+      <motion.article initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="max-w-4xl mx-auto">
         {/* Article Header */}
         <header className="mb-12 space-y-6 border-b border-zinc-800 pb-12">
           <div className="flex items-center gap-2 text-sm text-zinc-500 font-mono mb-4">
@@ -41,9 +29,7 @@ export const Article: React.FC<ArticleProps> = ({
             <span>Articles</span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold text-zinc-100 leading-tight">
-            {name}
-          </h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-zinc-100 leading-tight">{name}</h1>
 
           <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-500 font-mono">
             <div className="flex items-center gap-2">
@@ -95,22 +81,10 @@ export const Article: React.FC<ArticleProps> = ({
                   <h3 className="text-xl font-bold text-zinc-300 m-0">{children}</h3>
                 </div>
               ),
-              p: ({ children }) => (
-                <p className="text-zinc-400 leading-relaxed mb-6">{children}</p>
-              ),
-              ul: ({ children }) => (
-                <ul className="space-y-2 list-disc list-inside marker:text-zinc-600 mb-6 text-zinc-400">
-                  {children}
-                </ul>
-              ),
-              ol: ({ children }) => (
-                <ol className="space-y-2 list-decimal list-inside marker:text-zinc-600 mb-6 text-zinc-400">
-                  {children}
-                </ol>
-              ),
-              li: ({ children }) => (
-                <li className="pl-2">{children}</li>
-              ),
+              p: ({ children }) => <p className="text-zinc-400 leading-relaxed mb-6">{children}</p>,
+              ul: ({ children }) => <ul className="space-y-2 list-disc list-inside marker:text-zinc-600 mb-6 text-zinc-400">{children}</ul>,
+              ol: ({ children }) => <ol className="space-y-2 list-decimal list-inside marker:text-zinc-600 mb-6 text-zinc-400">{children}</ol>,
+              li: ({ children }) => <li className="pl-2">{children}</li>,
               blockquote: ({ children }) => (
                 <blockquote className="border-l-4 border-zinc-700 pl-4 py-1 my-6 text-zinc-500 italic bg-zinc-900/30 rounded-r">
                   {children}
@@ -161,7 +135,7 @@ export const Article: React.FC<ArticleProps> = ({
               Back to Home
             </a>
             <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-zinc-500 hover:text-zinc-300 transition-colors flex items-center gap-2"
             >
               Top

@@ -19,6 +19,7 @@ updatedAt: 2023-01-02
             href: "/articles/hello-world",
             publishedAt: new Date("2023-01-01").toISOString(),
             updatedAt: new Date("2023-01-02").toISOString(),
+            tags: [],
         });
     });
 
