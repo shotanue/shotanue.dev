@@ -20,5 +20,4 @@ export { ArticleCard } from "./alps/ontology/ArticleCard";
 
 export { GeometricPattern } from "./primitive/GeometricPattern";
 
-
 export { Layout } from "./layout/Layout";

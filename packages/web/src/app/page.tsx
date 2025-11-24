@@ -16,11 +16,5 @@ export default async function Home() {
   // Take recent 20 posts (increased from 10 to show more variety)
   const recentPosts = sortedPosts.slice(0, 20);
 
-  return <Welcome articles={
-    <>
-      {recentPosts.map((article, index) => (
-        <ArticleCard key={article.href} article={article} index={index} />
-      ))}
-    </>
-  } />;
+  return <Welcome articles={recentPosts.map((article, index) => <ArticleCard key={article.href} article={article} index={index} />)} />;
 }

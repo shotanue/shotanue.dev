@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { motion } from "motion/react";
 import type React from "react";
@@ -64,10 +64,7 @@ export const Welcome = ({ articles }: WelcomeProps) => {
             <h2 className="text-xl font-bold text-zinc-200">Articles</h2>
           </div>
 
-          <div className="grid gap-4">
-            {articles}
-
-          </div>
+          <div className="grid gap-4">{articles}</div>
         </section>
       </motion.div>
     </Layout>
