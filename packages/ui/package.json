@@ -39,6 +39,6 @@
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
-    "next": "16.0.3"
+    "next": "16.0.4"
   }
 }
