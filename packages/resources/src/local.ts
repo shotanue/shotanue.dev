@@ -48,7 +48,7 @@ export const parsePost = (content: string, id: string): Entry => {
         kind: "external",
         category: "internal",
         title: parsedData.title,
-        href: `/articles/${id}`,
+        href: `/posts/${id}`,
         publishedAt: parsedData.publishedAt,
         updatedAt: parsedData.updatedAt,
         tags: tags,
