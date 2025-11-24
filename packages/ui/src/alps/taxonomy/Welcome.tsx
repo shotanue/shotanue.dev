@@ -10,6 +10,7 @@ interface WelcomeProps {
     href: string;
     kind?: string;
     category?: string;
+    tags?: string[];
   }>;
 }
 
@@ -67,12 +68,11 @@ export const Welcome: React.FC<WelcomeProps> = ({ recentArticles }) => {
           </div>
         </section>
 
-        {/* Recent Articles Section */}
+        {/* Articles Section */}
         <section className="space-y-6">
           <div className="flex items-baseline gap-2">
             <span className="text-zinc-500 font-mono">##</span>
-            <h2 className="text-xl font-bold text-zinc-200">Recent Articles</h2>
-            <span className="text-zinc-500 text-sm font-mono ml-2">(last 10 posts)</span>
+            <h2 className="text-xl font-bold text-zinc-200">Articles</h2>
           </div>
 
           <div className="grid gap-4">
