@@ -1,5 +1,5 @@
 import { fetchHatenaPosts, fetchLocalPosts, fetchQiitaPosts } from "@repo/resources";
-import { Welcome } from "@repo/ui";
+import { ArticleCard, Welcome } from "@repo/ui";
 
 export default async function Home() {
   const [localPosts, hatenaPosts, qiitaPosts] = await Promise.all([
@@ -16,5 +16,11 @@ export default async function Home() {
   // Take recent 20 posts (increased from 10 to show more variety)
   const recentPosts = sortedPosts.slice(0, 20);
 
-  return <Welcome recentArticles={recentPosts} />;
+  return <Welcome articles={
+    <>
+      {recentPosts.map((article, index) => (
+        <ArticleCard key={article.href} article={article} index={index} />
+      ))}
+    </>
+  } />;
 }

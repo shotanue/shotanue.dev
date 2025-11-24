@@ -1,20 +1,15 @@
+'use client';
+
 import { motion } from "motion/react";
 import type React from "react";
 import { Layout } from "../../layout/Layout";
 import { ArticleCard } from "../ontology/ArticleCard";
 
 interface WelcomeProps {
-  recentArticles: Array<{
-    title: string;
-    publishedAt: string;
-    href: string;
-    kind?: string;
-    category?: string;
-    tags?: string[];
-  }>;
+  articles: React.ReactNode;
 }
 
-export const Welcome: React.FC<WelcomeProps> = ({ recentArticles }) => {
+export const Welcome = ({ articles }: WelcomeProps) => {
   return (
     <Layout>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="space-y-12">
@@ -70,9 +65,8 @@ export const Welcome: React.FC<WelcomeProps> = ({ recentArticles }) => {
           </div>
 
           <div className="grid gap-4">
-            {recentArticles.map((article, index) => (
-              <ArticleCard key={article.href} article={article} index={index} />
-            ))}
+            {articles}
+
           </div>
         </section>
       </motion.div>

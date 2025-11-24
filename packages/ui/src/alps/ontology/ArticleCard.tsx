@@ -1,3 +1,4 @@
+'use client';
 import { format } from "date-fns";
 import { motion } from "motion/react";
 import type React from "react";
