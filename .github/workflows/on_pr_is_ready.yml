@@ -1,4 +1,4 @@
-name: lint
+name: On PR is ready
 
 on:
   pull_request:
