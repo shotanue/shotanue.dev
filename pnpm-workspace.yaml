@@ -42,3 +42,4 @@ catalog:
 onlyBuiltDependencies:
   - '@biomejs/biome'
   - esbuild
+  - sharp
