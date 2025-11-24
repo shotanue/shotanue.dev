@@ -24,6 +24,7 @@
   "dependencies": {
     "feed": "catalog:",
     "gray-matter": "catalog:",
+    "js-yaml": "catalog:",
     "xml2js": "catalog:",
     "zod": "catalog:"
   },
