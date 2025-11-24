@@ -10,6 +10,5 @@ export default defineConfig({
   splitting: true,
   minify: false,
   sourcemap: true,
-  external: ["@egoist/tailwindcss-icons"],
-  onSuccess: "sed -i '' '1s/^/\"use client\";\\n/' dist/index.js",
+  external: ["@egoist/tailwindcss-icons"]
 });
