@@ -13,48 +13,87 @@ export const Welcome = ({ articles }: WelcomeProps) => {
   return (
     <Layout>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="space-y-12">
+        {/* Profile Section */}
+        <section className="space-y-6">
+          <div className="flex items-baseline gap-2">
+            <span className="text-zinc-500 font-mono">#</span>
+            <h1 className="text-2xl font-bold text-zinc-200">Shotaro Hirukawa</h1>
+          </div>
+        </section>
+
         {/* Intro Section */}
         <section className="space-y-6">
           <div className="flex items-baseline gap-2">
             <span className="text-zinc-500 font-mono">##</span>
-            <h2 className="text-xl font-bold text-zinc-200">Welcome to Tech Blog</h2>
+            <h2 className="text-xl font-bold text-zinc-200">Hello, there🤘🏼</h2>
           </div>
 
           <div className="prose prose-invert max-w-none text-zinc-400">
-            <p>
-              This is a technical blog where I share insights, tutorials, and thoughts about software development, web technologies, and engineering
-              practices.
-            </p>
+            <p>I'm a web developer, working in Japan.</p>
           </div>
         </section>
 
-        {/* What You'll Find Here Section */}
+        {/* Capabilities Section */}
         <section className="space-y-6">
           <div className="flex items-baseline gap-2">
             <span className="text-zinc-500 font-mono">##</span>
-            <h2 className="text-xl font-bold text-zinc-200">What You'll Find Here</h2>
+            <h2 className="text-xl font-bold text-zinc-200">Capabilities</h2>
           </div>
 
-          <div className="space-y-4 text-zinc-400">
-            <ul className="space-y-2 list-disc list-inside marker:text-zinc-600">
-              <li>
-                <strong className="text-zinc-200">**Web Development**:</strong> Deep dives into React, TypeScript, and modern frontend frameworks
-              </li>
-              <li>
-                <strong className="text-zinc-200">**System Design**:</strong> Architecture patterns and best practices
-              </li>
-              <li>
-                <strong className="text-zinc-200">**DevOps**:</strong> CI/CD, containerization, and cloud infrastructure
-              </li>
-              <li>
-                <strong className="text-zinc-200">**Programming Concepts**:</strong> Algorithms, data structures, and design patterns
-              </li>
-            </ul>
-            <p className="pt-4">Feel free to explore the articles below and reach out if you have any questions!</p>
-            <p>
-              <strong className="text-zinc-200">**[Contact me](mailto:hello@example.com)**</strong>
-            </p>
+          <div className="text-zinc-400">
+            <p>Web development, TypeScript, React, Next.js, PHP, MySQL</p>
           </div>
+        </section>
+
+        {/* Social Links Section */}
+        <section className="space-y-6">
+          <div className="flex items-baseline gap-2">
+            <span className="text-zinc-500 font-mono">##</span>
+            <h2 className="text-xl font-bold text-zinc-200">You can find me on</h2>
+          </div>
+
+          <ul className="list-disc list-inside text-zinc-400 space-y-1">
+            <li>
+              <a
+                href="https://x.com/shotanue"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-200 hover:text-zinc-100 underline decoration-zinc-600 hover:decoration-zinc-400"
+              >
+                [X](https://x.com/shotanue)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/shotanue"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-200 hover:text-zinc-100 underline decoration-zinc-600 hover:decoration-zinc-400"
+              >
+                [GitHub](https://github.com/shotanue)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://qiita.com/shotanue"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-200 hover:text-zinc-100 underline decoration-zinc-600 hover:decoration-zinc-400"
+              >
+                [Qiita](https://qiita.com/shotanue)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://shotanue.hatenablog.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-200 hover:text-zinc-100 underline decoration-zinc-600 hover:decoration-zinc-400"
+              >
+                [Hatena](https://shotanue.hatenablog.com)
+              </a>
+            </li>
+          </ul>
         </section>
 
         {/* Articles Section */}
