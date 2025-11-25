@@ -1,6 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-
 import { Identifier as Component } from "@repo/ui";
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Component> = {
   component: Component,

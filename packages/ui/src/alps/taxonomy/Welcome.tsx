@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import type React from "react";
 import { Layout } from "../../layout/Layout";
-import { ArticleCard } from "../ontology/ArticleCard";
 
 interface WelcomeProps {
   articles: React.ReactNode;

@@ -91,85 +91,6 @@ export function GeometricPattern({
     [backgroundColor, triangleCount, colorPalette, strokeOpacity, displacementFactor, seed],
   );
 
-  const generateTriangles = (
-    width: number,
-    height: number,
-    count: number,
-    palette: string[],
-    displacement: number,
-    random: () => number,
-  ): Triangle[] => {
-    const triangles: Triangle[] = [];
-
-    // Calculate grid size based on desired triangle count
-    // Each cell creates 2 triangles
-    const gridSize = Math.ceil(Math.sqrt(count / 2));
-    const cellWidth = width / gridSize;
-    const cellHeight = height / gridSize;
-
-    // Generate grid points with displacement
-    const points: [number, number][][] = [];
-
-    for (let i = 0; i <= gridSize; i++) {
-      points[i] = [];
-      for (let j = 0; j <= gridSize; j++) {
-        let x = i * cellWidth;
-        let y = j * cellHeight;
-
-        // Add random displacement to interior points only
-        if (i > 0 && i < gridSize && j > 0 && j < gridSize) {
-          x += (random() - 0.5) * cellWidth * displacement;
-          y += (random() - 0.5) * cellHeight * displacement;
-        }
-
-        // Clamp edge points to boundaries
-        if (i === 0) x = 0;
-        if (i === gridSize) x = width;
-        if (j === 0) y = 0;
-        if (j === gridSize) y = height;
-
-        points[i][j] = [x, y];
-      }
-    }
-
-    // Create triangles from grid cells
-    for (let i = 0; i < gridSize; i++) {
-      for (let j = 0; j < gridSize; j++) {
-        const topLeft = points[i][j];
-        const topRight = points[i + 1][j];
-        const bottomLeft = points[i][j + 1];
-        const bottomRight = points[i + 1][j + 1];
-
-        // Randomly choose diagonal direction for variety
-        const useDiagonal1 = random() > 0.5;
-
-        if (useDiagonal1) {
-          // Top-left to bottom-right diagonal
-          triangles.push({
-            points: [topLeft, topRight, bottomRight],
-            color: palette[Math.floor(random() * palette.length)],
-          });
-          triangles.push({
-            points: [topLeft, bottomRight, bottomLeft],
-            color: palette[Math.floor(random() * palette.length)],
-          });
-        } else {
-          // Top-right to bottom-left diagonal
-          triangles.push({
-            points: [topLeft, topRight, bottomLeft],
-            color: palette[Math.floor(random() * palette.length)],
-          });
-          triangles.push({
-            points: [topRight, bottomRight, bottomLeft],
-            color: palette[Math.floor(random() * palette.length)],
-          });
-        }
-      }
-    }
-
-    return triangles;
-  };
-
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || dimensions.width === 0 || dimensions.height === 0) return;
@@ -190,3 +111,82 @@ export function GeometricPattern({
     </div>
   );
 }
+
+const generateTriangles = (
+  width: number,
+  height: number,
+  count: number,
+  palette: string[],
+  displacement: number,
+  random: () => number,
+): Triangle[] => {
+  const triangles: Triangle[] = [];
+
+  // Calculate grid size based on desired triangle count
+  // Each cell creates 2 triangles
+  const gridSize = Math.ceil(Math.sqrt(count / 2));
+  const cellWidth = width / gridSize;
+  const cellHeight = height / gridSize;
+
+  // Generate grid points with displacement
+  const points: [number, number][][] = [];
+
+  for (let i = 0; i <= gridSize; i++) {
+    points[i] = [];
+    for (let j = 0; j <= gridSize; j++) {
+      let x = i * cellWidth;
+      let y = j * cellHeight;
+
+      // Add random displacement to interior points only
+      if (i > 0 && i < gridSize && j > 0 && j < gridSize) {
+        x += (random() - 0.5) * cellWidth * displacement;
+        y += (random() - 0.5) * cellHeight * displacement;
+      }
+
+      // Clamp edge points to boundaries
+      if (i === 0) x = 0;
+      if (i === gridSize) x = width;
+      if (j === 0) y = 0;
+      if (j === gridSize) y = height;
+
+      points[i][j] = [x, y];
+    }
+  }
+
+  // Create triangles from grid cells
+  for (let i = 0; i < gridSize; i++) {
+    for (let j = 0; j < gridSize; j++) {
+      const topLeft = points[i][j];
+      const topRight = points[i + 1][j];
+      const bottomLeft = points[i][j + 1];
+      const bottomRight = points[i + 1][j + 1];
+
+      // Randomly choose diagonal direction for variety
+      const useDiagonal1 = random() > 0.5;
+
+      if (useDiagonal1) {
+        // Top-left to bottom-right diagonal
+        triangles.push({
+          points: [topLeft, topRight, bottomRight],
+          color: palette[Math.floor(random() * palette.length)],
+        });
+        triangles.push({
+          points: [topLeft, bottomRight, bottomLeft],
+          color: palette[Math.floor(random() * palette.length)],
+        });
+      } else {
+        // Top-right to bottom-left diagonal
+        triangles.push({
+          points: [topLeft, topRight, bottomLeft],
+          color: palette[Math.floor(random() * palette.length)],
+        });
+        triangles.push({
+          points: [topRight, bottomRight, bottomLeft],
+          color: palette[Math.floor(random() * palette.length)],
+        });
+      }
+    }
+  }
+
+  return triangles;
+};

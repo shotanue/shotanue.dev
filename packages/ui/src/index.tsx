@@ -1,23 +1,20 @@
 // import "./input.css";
 
 export { ArticleBody } from "./alps/ontology/ArticleBody";
+export { ArticleCard } from "./alps/ontology/ArticleCard";
 export { Category } from "./alps/ontology/Category";
 export { DateModified } from "./alps/ontology/DateModified";
 export { DatePublished } from "./alps/ontology/DatePublished";
 export { Identifier } from "./alps/ontology/Identifier";
 export { Name } from "./alps/ontology/Name";
 export { Tag } from "./alps/ontology/Tag";
-
 export { Article } from "./alps/taxonomy/Article";
 export { ArticleCollection } from "./alps/taxonomy/ArticleCollection";
 export { CategorizedArticleCollection } from "./alps/taxonomy/CategorizedArticleCollection";
 export { Readme } from "./alps/taxonomy/Readme";
 export { TagCollection } from "./alps/taxonomy/TagCollection";
+export { TagFilter } from "./alps/taxonomy/TagFilter";
 export { TaggedArticleCollection } from "./alps/taxonomy/TaggedArticleCollection";
 export { Welcome } from "./alps/taxonomy/Welcome";
-export { TagFilter } from "./alps/taxonomy/TagFilter";
-export { ArticleCard } from "./alps/ontology/ArticleCard";
-
-export { GeometricPattern } from "./primitive/GeometricPattern";
-
 export { Layout } from "./layout/Layout";
+export { GeometricPattern } from "./primitive/GeometricPattern";

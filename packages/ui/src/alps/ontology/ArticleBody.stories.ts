@@ -1,6 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-
 import { ArticleBody } from "@repo/ui";
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticleBody> = {
   component: ArticleBody,
