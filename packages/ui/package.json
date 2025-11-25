@@ -5,7 +5,10 @@
   "private": true,
   "license": "MIT",
   "type": "module",
-  "files": ["dist", "package.json"],
+  "files": [
+    "dist",
+    "package.json"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",

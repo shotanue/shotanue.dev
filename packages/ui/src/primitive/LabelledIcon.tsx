@@ -1,14 +1,6 @@
 import classNames from "classnames";
 
-export const LabelledIcon = ({
-  icon,
-  selected,
-  children,
-}: {
-  icon: string;
-  selected?: boolean;
-  children: React.ReactNode;
-}) => {
+export const LabelledIcon = ({ icon, selected, children }: { icon: string; selected?: boolean; children: React.ReactNode }) => {
   // Available icons.
   // For telling the tailwind bundler to include these icons in the package.
   // These codes itself are not bundled in the package, due to dead code elimination.

@@ -1,6 +1,5 @@
-import type { Tag as Descriptor } from "../descriptor";
-
 import { FilterByTag } from "../choreography/FilterByTag";
+import type { Tag as Descriptor } from "../descriptor";
 
 export const Tag: React.FC<{ children: Descriptor }> = ({ children }) => {
   return (
