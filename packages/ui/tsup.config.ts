@@ -10,5 +10,5 @@ export default defineConfig({
   splitting: true,
   minify: false,
   sourcemap: true,
-  external: ["@egoist/tailwindcss-icons"]
+  external: ["@egoist/tailwindcss-icons"],
 });
