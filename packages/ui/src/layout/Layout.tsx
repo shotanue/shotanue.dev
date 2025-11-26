@@ -41,7 +41,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-200 font-sans selection:bg-zinc-800 selection:text-zinc-100 relative">
+    <div className="min-h-dvh bg-zinc-950 text-zinc-200 font-sans selection:bg-zinc-800 selection:text-zinc-100 relative">
       <div className="fixed inset-0 z-0 opacity-30 pointer-events-none">
         <GeometricPattern
           seed={42}
@@ -53,7 +53,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         />
       </div>
 
-      <div className="relative z-10 flex flex-col min-h-screen">
+      <div className="relative z-10 flex flex-col min-h-dvh">
         <main className="pt-24 pb-16 px-4 max-w-4xl mx-auto w-full grow">{children}</main>
       </div>
     </div>
