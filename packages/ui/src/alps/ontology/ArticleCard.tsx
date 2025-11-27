@@ -64,7 +64,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ article, index, onClic
       {isExternal && (
         <div className="flex items-center gap-2 text-sm text-blue-400 mt-4 pt-4 border-t border-zinc-800/50">
           <span className="text-zinc-500 shrink-0">[ Read on {article.category === "hatena" ? "Hatena Blog" : "Qiita"} ]</span>
-          <span className="opacity-70 hover:opacity-100 transition-opacity break-all">( {article.href.replace(/^https?:\/\//, "")} )</span>
+          <span className="opacity-70 hover:opacity-100 transition-opacity break-all min-w-0 flex-1">( {article.href.replace(/^https?:\/\//, "")} )</span>
           <span className="i-heroicons-arrow-top-right-on-square w-4 h-4 ml-auto shrink-0" />
         </div>
       )}
