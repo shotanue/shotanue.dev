@@ -24,7 +24,7 @@
   "dependencies": {
     "classnames": "catalog:",
     "date-fns": "catalog:",
-    "motion": "12.23.24",
+    "motion": "13.1.0",
     "react-markdown": "catalog:"
   },
   "devDependencies": {
