@@ -24,7 +24,7 @@
   "dependencies": {
     "classnames": "catalog:",
     "date-fns": "catalog:",
-    "motion": "12.23.24",
+    "motion": "12.43.0",
     "react-markdown": "catalog:"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "@iconify-json/heroicons": "catalog:",
     "@repo/tsconfig": "workspace:*",
     "@storybook/react": "catalog:",
-    "@tailwindcss/postcss": "4.1.17",
+    "@tailwindcss/postcss": "4.3.3",
     "@types/react": "catalog:",
     "autoprefixer": "catalog:",
     "postcss": "catalog:",
@@ -42,6 +42,6 @@
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
-    "next": "16.0.4"
+    "next": "16.3.1"
   }
 }
